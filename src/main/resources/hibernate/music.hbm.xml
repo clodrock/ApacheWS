@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+        <hibernate-mapping>
+        <class name="com.jaxws.series.td.spring.hibernate.model.Music" table="MUSIC">
+        
+        
+        <id name="musicId" column="MUSIC_ID" type="integer">
+        <generator class="sequence">
+             <param name="sequence">SEQ_MUSIC</param>
+          </generator>
+        </id>
+
+
+		<property name="movieName" type="string">
+			<column name="MOVIE_NAME"  />
+		</property>
+		
+		<property name="director" type="string">
+			<column name="MOVIE_DIRECTOR"  />
+		</property>
+		
+		<property name="yearOfRelease" type="string">
+			<column name="YEAR_OF_RELEASE"  />
+		</property>
+		
+		<property name="comments" type="string">
+			<column name="COMMENTS"  />
+		</property>
+		
+		
+        </class>
+        
+        <query name="HQL_GET_MUSIC_BY_COMPOSER_ID">from Music</query>       
+ </hibernate-mapping>
